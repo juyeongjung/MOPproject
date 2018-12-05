@@ -19,6 +19,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".special_day2"
+            android:label="@string/title_activity_special_day2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".add_story"
+            android:label="@string/title_activity_add_story"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".foods_pic"
+            android:label="@string/title_activity_foods_pic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".bucket_list"
+            android:label="@string/title_activity_bucket_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".special_day"
+            android:label="@string/title_activity_special_day"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".travel"
+            android:label="@string/title_activity_travel"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

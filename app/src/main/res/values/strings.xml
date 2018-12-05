@@ -6,4 +6,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_special_day2">special_day2</string>
+    <string name="title_activity_add_story">add_story</string>
+    <string name="title_activity_foods_pic">foods_pic</string>
+    <string name="title_activity_bucket_list">bucket_list</string>
+    <string name="title_activity_special_day">special_day</string>
+    <string name="title_activity_travel">travel</string>
 </resources>
