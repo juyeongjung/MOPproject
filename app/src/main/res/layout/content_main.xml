@@ -8,116 +8,193 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/scrollView3"
+    <TableRow
+        android:id="@+id/tableRow"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/imageButton21"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/star_on" />
 
-        <TableRow
-            android:id="@+id/tableRow"
-            android:layout_width="0dp"
+        <ImageButton
+            android:id="@+id/imageButton22"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/star_on" />
+
+        <ImageButton
+            android:id="@+id/imageButton23"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/star_on" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
-            <ImageButton
-                android:id="@+id/imageButton21"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/star_on" />
-
-            <ImageButton
-                android:id="@+id/imageButton22"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/star_on" />
-
-            <ImageButton
-                android:id="@+id/imageButton23"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/star_on" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
+        <Button
+            android:id="@+id/button41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="23dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableRow">
+            android:text="Button" />
+    </TableRow>
 
-            <EditText
-                android:id="@+id/editText5"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+    <ScrollView
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+
+        android:id="@+id/ScrollView1"
+
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
 
             <Button
+
+                android:id="@+id/button2"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 1" />
+
+            <Button
+
+                android:id="@+id/button3"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 2" />
+
+            <!-- 중간 생략 버튼 4개-->
+
+            <Button
+
+                android:id="@+id/button1"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 6" />
+
+            <Button
+
+                android:id="@+id/button"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 6" />
+
+            <Button
+
                 android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-        </TableRow>
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="0dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableRow2"
-            app:srcCompat="@android:drawable/sym_def_app_icon" />
+                android:layout_width="match_parent"
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="0dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7"
-            app:srcCompat="@android:drawable/sym_def_app_icon" />
+                android:layout_height="100dp"
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="0dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8"
-            app:srcCompat="@android:drawable/sym_def_app_icon" />
-    </android.support.constraint.ConstraintLayout>
+                android:text="Button 6" />
+
+            <Button
+
+                android:id="@+id/button5"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 6" />
+
+            <Button
+
+                android:id="@+id/button6"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 6" />
+
+            <Button
+
+                android:id="@+id/button7"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 6" />
+
+            <Button
+
+                android:id="@+id/button8"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 7" />
+
+            <Button
+
+                android:id="@+id/button9"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="100dp"
+
+                android:text="Button 9" />
+        </LinearLayout>
+
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
