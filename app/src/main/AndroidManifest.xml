@@ -20,10 +20,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".special_day2"
-            android:label="@string/title_activity_special_day2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".add_story"
             android:label="@string/title_activity_add_story"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -43,6 +39,8 @@
             android:name=".travel"
             android:label="@string/title_activity_travel"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".DisplayStory" />
+        <activity android:name=".DisplayMovie" />
     </application>
 
 </manifest>
