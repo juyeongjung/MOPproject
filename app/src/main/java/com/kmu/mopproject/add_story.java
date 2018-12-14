@@ -12,11 +12,11 @@ import android.widget.Toast;
 public class add_story extends AppCompatActivity {
 
     private DBHelper mydb;
-    TextView name;
-    TextView director;
-    TextView year;
-    TextView nation;
-    TextView rating;
+    TextView title;
+    TextView date;
+    TextView category;
+    TextView media_src;
+    TextView main;
     int id = 0;
 
 
@@ -24,11 +24,11 @@ public class add_story extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_story);
-        name = (TextView) findViewById(R.id.editTextName);
-        director = (TextView) findViewById(R.id.editTextDirector);
-        year = (TextView) findViewById(R.id.editTextYear);
-        nation = (TextView) findViewById(R.id.editTextNation);
-        rating = (TextView) findViewById(R.id.editTextRating);
+        title = (TextView) findViewById(R.id.editTextTitle);
+        date = (TextView) findViewById(R.id.editTextCategory);
+        category = (TextView) findViewById(R.id.editTextDate);
+        media_src = (TextView) findViewById(R.id.editTextMedia);
+        main = (TextView) findViewById(R.id.editTextMain);
 
         mydb = new DBHelper(this);
 
@@ -39,22 +39,22 @@ public class add_story extends AppCompatActivity {
                 Cursor rs = mydb.getData(Value);
                 id = Value;
                 rs.moveToFirst();
-                String n = rs.getString(rs.getColumnIndex(DBHelper.MOVIES_COLUMN_NAME));
-                String d = rs.getString(rs.getColumnIndex(DBHelper.MOVIES_COLUMN_DIRECTOR));
-                String y = rs.getString(rs.getColumnIndex(DBHelper.MOVIES_COLUMN_YEAR));
-                String na = rs.getString(rs.getColumnIndex(DBHelper.MOVIES_COLUMN_NATION));
-                String r = rs.getString(rs.getColumnIndex(DBHelper.MOVIES_COLUMN_RATING));
+                String n = rs.getString(rs.getColumnIndex(DBHelper.STORIES_COLUMN_TITLE));
+                String d = rs.getString(rs.getColumnIndex(DBHelper.STORIES_COLUMN_DATE));
+                String y = rs.getString(rs.getColumnIndex(DBHelper.STORIES_COLUMN_CATEGORY));
+                String na = rs.getString(rs.getColumnIndex(DBHelper.STORIES_COLUMN_MEDIA));
+                String r = rs.getString(rs.getColumnIndex(DBHelper.STORIES_COLUMN_MAIN));
                 if (!rs.isClosed()) {
                     rs.close();
                 }
                 Button b = (Button) findViewById(R.id.button1);
                 b.setVisibility(View.INVISIBLE);
 
-                name.setText((CharSequence) n);
-                director.setText((CharSequence) d);
-                year.setText((CharSequence) y);
-                nation.setText((CharSequence) na);
-                rating.setText((CharSequence) r);
+                title.setText((CharSequence) n);
+                date.setText((CharSequence) d);
+                category.setText((CharSequence) y);
+                media_src.setText((CharSequence) na);
+                main.setText((CharSequence) r);
             }
         }
     }
@@ -67,7 +67,7 @@ public class add_story extends AppCompatActivity {
 
             int Value = extras.getInt("id");
             if (Value > 0) {
-                if (mydb.updateMovie(id, name.getText().toString(), director.getText().toString(), year.getText().toString(), nation.getText().toString(), rating.getText().toString())) {
+                if (mydb.updateStory(id, title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "수정되었음", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), com.kmu.mopproject.MainActivity.class);
                     startActivity(intent);
@@ -77,7 +77,7 @@ public class add_story extends AppCompatActivity {
             } else {
                 System.out.println("insert");
 
-                if (mydb.insertMovie(name.getText().toString(), director.getText().toString(), year.getText().toString(), nation.getText().toString(), rating.getText().toString())) {
+                if (mydb.insertStory(title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "추가되었음", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "추가되지 않았음", Toast.LENGTH_SHORT).show();
@@ -94,7 +94,7 @@ public class add_story extends AppCompatActivity {
         if (extras != null) {
             int Value = extras.getInt("id");
             if (Value > 0) {
-                mydb.deleteMovie(id);
+                mydb.deleteStory(id);
                 Toast.makeText(getApplicationContext(), "삭제되었음", Toast.LENGTH_SHORT).show();
                 finish();
             } else {
@@ -108,7 +108,7 @@ public class add_story extends AppCompatActivity {
         if (extras != null) {
             int value = extras.getInt("id");
             if (value > 0) {
-                if (mydb.updateMovie(id, name.getText().toString(), director.getText().toString(), year.getText().toString(), nation.getText().toString(), rating.getText().toString())) {
+                if (mydb.updateStory(id, title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "수정되었음", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {

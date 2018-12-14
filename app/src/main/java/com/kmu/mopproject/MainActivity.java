@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mydb = new DBHelper(this);
-        ArrayList array_list = mydb.getAllMovies();
+        ArrayList array_list = mydb.getAllStories();
 
         mAdapter =
                 new ArrayAdapter(this, android.R.layout.simple_list_item_1, array_list);
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         mAdapter.clear();
-        mAdapter.addAll(mydb.getAllMovies());
+        mAdapter.addAll(mydb.getAllStories());
         mAdapter.notifyDataSetChanged();
     }
 
