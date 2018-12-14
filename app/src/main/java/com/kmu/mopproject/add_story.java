@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class add_story extends AppCompatActivity {
 
     private DBHelper mydb;
@@ -19,14 +22,24 @@ public class add_story extends AppCompatActivity {
     TextView main;
     int id = 0;
 
+    long mNow;
+    Date mDate;
+    SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_story);
+
+        mNow=System.currentTimeMillis();
+        mDate=new Date(mNow);
+        mFormat.format(mDate);
+
         title = (TextView) findViewById(R.id.editTextTitle);
-        date = (TextView) findViewById(R.id.editTextCategory);
-        category = (TextView) findViewById(R.id.editTextDate);
+        date = (TextView) findViewById(R.id.editTextDate);
+        date.setText(getTime());
+        category = (TextView) findViewById(R.id.editTextCategory);
         media_src = (TextView) findViewById(R.id.editTextMedia);
         main = (TextView) findViewById(R.id.editTextMain);
 
@@ -57,6 +70,12 @@ public class add_story extends AppCompatActivity {
                 main.setText((CharSequence) r);
             }
         }
+    }
+
+    private String getTime(){
+        mNow = System.currentTimeMillis();
+        mDate = new Date(mNow);
+        return mFormat.format(mDate);
     }
 
     public void insert(View view) {
