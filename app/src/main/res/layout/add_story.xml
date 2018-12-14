@@ -3,7 +3,7 @@
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".DisplayMovie">
+    tools:context=".add_story">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/editTextName"
             android:layout_alignParentLeft="true"
-            android:text="영화이름"
+            android:text="제목"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView1"
             android:layout_alignBottom="@+id/editTextRating"
-            android:text="평점"
+            android:text="파일첨부"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView1"
             android:layout_alignBottom="@+id/editTextYear"
-            android:text="제작연도"
+            android:text="날짜"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/editTextRating"
             android:layout_alignLeft="@+id/textView5"
-            android:text="감독"
+            android:text="카테고리"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -101,7 +101,7 @@
             android:layout_alignBottom="@+id/editTextNation"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/editTextRating"
-            android:text="국가"
+            android:text="본문"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText

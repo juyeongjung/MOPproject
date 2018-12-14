@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity
                 int id = Integer.parseInt(strArray[0]);
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", id);
-                Intent intent = new Intent(getApplicationContext(), com.kmu.mopproject.DisplayMovie.class);
+                Intent intent = new Intent(getApplicationContext(), add_story.class);
                 intent.putExtras(dataBundle);
                 startActivity(intent);
             }
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("id", 0);
-                Intent intent = new Intent(getApplicationContext(), com.kmu.mopproject.DisplayMovie.class);
+                Intent intent = new Intent(getApplicationContext(), add_story.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View target) {
         Bundle bundle = new Bundle();
         bundle.putInt("id", 0);
-        Intent intent = new Intent(getApplicationContext(), com.kmu.mopproject.DisplayMovie.class);
+        Intent intent = new Intent(getApplicationContext(), add_story.class);
         intent.putExtras(bundle);
         startActivity(intent);
     }
