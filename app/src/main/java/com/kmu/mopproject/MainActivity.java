@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -166,10 +167,16 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View view){
 
         TextView fastadd=(TextView) findViewById(R.id.editText5);
-        mAdapter.addAll(mydb.insertStory(fastadd.getText().toString(),getTime(),"normal_day","null",fastadd.getText().toString()));
-        fastadd.setText(null);
-        HideKeyboard(this);
-        onResume();
+        if(fastadd.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "내용을 입력하세요", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            mAdapter.addAll(mydb.insertStory(fastadd.getText().toString(),getTime(),"normal_day","null",fastadd.getText().toString()));
+            fastadd.setText(null);
+            HideKeyboard(this);
+            onResume();
+        }
+
 
     }
 
