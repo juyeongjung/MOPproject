@@ -1,11 +1,14 @@
 package com.kmu.mopproject;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.MediaStore;
+import android.support.v4.content.ContextCompat;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String STORIES_COLUMN_TITLE = "title";//"name";
     public static final String STORIES_COLUMN_DATE = "date";//"director";
     public static final String STORIES_COLUMN_CATEGORY = "category";//"year";
+    public static final int[] STORIES_COUUMN_MEDIAS={};
     public static final String STORIES_COLUMN_MEDIA = "media_src";//"nation";
     public static final String STORIES_COLUMN_MAIN = "main";//"rating";
 
@@ -89,7 +93,9 @@ public class DBHelper extends SQLiteOpenHelper {
         res.moveToFirst();
         while (res.isAfterLast() == false) {
             array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+
-                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE)));
+                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE))+"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_DATE))
+                    +"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_MAIN)));
+            array_list.addAll(ContextCompat.getDrawable());
             res.moveToNext();
         }
         return array_list;
@@ -103,7 +109,8 @@ public class DBHelper extends SQLiteOpenHelper {
         res.moveToFirst();
         while (res.isAfterLast() == false) {
             array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+
-                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE)));
+                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE))+"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_DATE))
+                    +"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_MAIN)));
             res.moveToNext();
         }
         return array_list;
@@ -117,7 +124,8 @@ public class DBHelper extends SQLiteOpenHelper {
         res.moveToFirst();
         while (res.isAfterLast() == false) {
             array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+
-                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE)));
+                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE))+"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_DATE))
+                    +"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_MAIN)));
             res.moveToNext();
         }
         return array_list;
@@ -131,7 +139,8 @@ public class DBHelper extends SQLiteOpenHelper {
         res.moveToFirst();
         while (res.isAfterLast() == false) {
             array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+
-                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE)));
+                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE))+"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_DATE))
+                    +"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_MAIN)));
             res.moveToNext();
         }
         return array_list;

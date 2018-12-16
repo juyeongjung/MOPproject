@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -172,12 +173,11 @@ public class MainActivity extends AppCompatActivity
         }
         else{
             mAdapter.addAll(mydb.insertStory(fastadd.getText().toString(),getTime(),"normal_day","null",fastadd.getText().toString()));
+//            mAdapter.addAll(ContextCompat.getDrawable(this,R.drawable.one));
             fastadd.setText(null);
             HideKeyboard(this);
             onResume();
         }
-
-
     }
 
     public static void HideKeyboard(Activity activity)
