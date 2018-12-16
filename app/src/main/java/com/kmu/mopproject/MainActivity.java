@@ -1,5 +1,6 @@
 package com.kmu.mopproject;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,12 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
 import com.kmu.mopproject.add_story.*;
 
 public class MainActivity extends AppCompatActivity
@@ -25,6 +30,10 @@ public class MainActivity extends AppCompatActivity
     private ListView myListView;
     DBHelper mydb;
     ArrayAdapter mAdapter;
+
+    long mNow;
+    Date mDate;
+    SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +149,12 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    private String getTime(){
+        mNow = System.currentTimeMillis();
+        mDate = new Date(mNow);
+        return mFormat.format(mDate);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -149,18 +164,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onClick(View view){
-        Bundle bundle = new Bundle();
-        bundle.putInt("id", 0);
-        Intent intent = new Intent(getApplicationContext(), add_story.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
+
+        TextView fastadd=(TextView) findViewById(R.id.editText5);
+        mAdapter.addAll(mydb.insertStory(fastadd.getText().toString(),getTime(),"normal_day","null",fastadd.getText().toString()));
+        fastadd.setText(null);
+        HideKeyboard(this);
+        onResume();
+
     }
 
-
-//    public void onClick2(View target){
-//        TextView fastadd=(TextView) findViewById(R.id.editText5);
-//        fastInsert.fastInsert();
-//
-//    }
+    public static void HideKeyboard(Activity activity)
+    {
+        InputMethodManager im = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
+        im.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+    }
 
 }
