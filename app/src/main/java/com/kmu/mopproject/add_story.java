@@ -93,13 +93,23 @@ public class add_story extends AppCompatActivity {
     }
 
     public void insert(View view) {
-        System.out.println("insert start");
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            System.out.println("not null");
 
             int Value = extras.getInt("id");
             if (Value > 0) {
+                if(option1.isChecked()){
+                    category.setText((CharSequence) "special_day");
+                }
+                else if(option2.isChecked()){
+                    category.setText((CharSequence)"foods");
+                }
+                else if(option3.isChecked()){
+                    category.setText((CharSequence)"travel");
+                }
+                else{
+                    category.setText((CharSequence)"normal_day");
+                }
 
                 if (mydb.updateStory(id, title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "수정되었음", Toast.LENGTH_SHORT).show();
@@ -109,15 +119,17 @@ public class add_story extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "수정되지 않았음", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                System.out.println("insert");
                 if(option1.isChecked()){
-                    category.setText((CharSequence) "special_cay");
+                    category.setText((CharSequence) "special_day");
                 }
                 else if(option2.isChecked()){
                     category.setText((CharSequence)"foods");
                 }
                 else if(option3.isChecked()){
                     category.setText((CharSequence)"travel");
+                }
+                else{
+                    category.setText((CharSequence)"normal_day");
                 }
 
                 if (mydb.insertStory(title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
@@ -128,8 +140,6 @@ public class add_story extends AppCompatActivity {
                 finish();
             }
         }
-        System.out.println("null");
-
     }
 
     public void delete(View view) {
@@ -151,6 +161,18 @@ public class add_story extends AppCompatActivity {
         if (extras != null) {
             int value = extras.getInt("id");
             if (value > 0) {
+                if(option1.isChecked()){
+                    category.setText((CharSequence) "special_day");
+                }
+                else if(option2.isChecked()){
+                    category.setText((CharSequence)"foods");
+                }
+                else if(option3.isChecked()){
+                    category.setText((CharSequence)"travel");
+                }
+                else{
+                    category.setText((CharSequence)"normal_day");
+                }
                 if (mydb.updateStory(id, title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "수정되었음", Toast.LENGTH_SHORT).show();
                     finish();
@@ -161,15 +183,15 @@ public class add_story extends AppCompatActivity {
         }
     }
 
-    public void fastInsert(){
-//        Bundle extras = getIntent().getExtras();
-
-        if (mydb.insertStory("1", "2", "3", "4", "5")) {
-            Toast.makeText(getApplicationContext(), "추가되었음", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "추가되지 않았음", Toast.LENGTH_SHORT).show();
-        }
-        finish();
-
-    }
+//    public void fastInsert(){
+////        Bundle extras = getIntent().getExtras();
+//
+//        if (mydb.insertStory("1", "2", "3", "4", "5")) {
+//            Toast.makeText(getApplicationContext(), "추가되었음", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(getApplicationContext(), "추가되지 않았음", Toast.LENGTH_SHORT).show();
+//        }
+//        finish();
+//
+//    }
 }
