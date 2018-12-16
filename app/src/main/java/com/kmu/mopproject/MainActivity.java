@@ -15,12 +15,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import com.kmu.mopproject.add_story.*;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     private ListView myListView;
     DBHelper mydb;
     ArrayAdapter mAdapter;
@@ -147,11 +148,19 @@ public class MainActivity extends AppCompatActivity
         mAdapter.notifyDataSetChanged();
     }
 
-    public void onClick(View target) {
+    public void onClick(View view){
         Bundle bundle = new Bundle();
         bundle.putInt("id", 0);
         Intent intent = new Intent(getApplicationContext(), add_story.class);
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+
+//    public void onClick2(View target){
+//        TextView fastadd=(TextView) findViewById(R.id.editText5);
+//        fastInsert.fastInsert();
+//
+//    }
+
 }

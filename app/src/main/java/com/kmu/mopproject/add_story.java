@@ -1,18 +1,23 @@
 package com.kmu.mopproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class add_story extends AppCompatActivity {
+
+    public static Context mContext;
 
     private DBHelper mydb;
     TextView title;
@@ -20,6 +25,9 @@ public class add_story extends AppCompatActivity {
     TextView category;
     TextView media_src;
     TextView main;
+    CheckBox option1;
+    CheckBox option2;
+    CheckBox option3;
     int id = 0;
 
     long mNow;
@@ -44,6 +52,11 @@ public class add_story extends AppCompatActivity {
         main = (TextView) findViewById(R.id.editTextMain);
 
         mydb = new DBHelper(this);
+
+        option1 = (CheckBox) findViewById(R.id.checkBoxCate1);
+        option2 = (CheckBox) findViewById(R.id.checkBoxCate2);
+        option3 = (CheckBox)findViewById(R.id.checkBoxCate3);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -70,6 +83,7 @@ public class add_story extends AppCompatActivity {
                 main.setText((CharSequence) r);
             }
         }
+        mContext=this;
     }
 
     private String getTime(){
@@ -86,6 +100,7 @@ public class add_story extends AppCompatActivity {
 
             int Value = extras.getInt("id");
             if (Value > 0) {
+
                 if (mydb.updateStory(id, title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "수정되었음", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), com.kmu.mopproject.MainActivity.class);
@@ -95,6 +110,15 @@ public class add_story extends AppCompatActivity {
                 }
             } else {
                 System.out.println("insert");
+                if(option1.isChecked()){
+                    category.setText((CharSequence) "special_cay");
+                }
+                else if(option2.isChecked()){
+                    category.setText((CharSequence)"foods");
+                }
+                else if(option3.isChecked()){
+                    category.setText((CharSequence)"travel");
+                }
 
                 if (mydb.insertStory(title.getText().toString(), date.getText().toString(), category.getText().toString(), media_src.getText().toString(), main.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "추가되었음", Toast.LENGTH_SHORT).show();
@@ -135,5 +159,17 @@ public class add_story extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void fastInsert(){
+//        Bundle extras = getIntent().getExtras();
+
+        if (mydb.insertStory("1", "2", "3", "4", "5")) {
+            Toast.makeText(getApplicationContext(), "추가되었음", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "추가되지 않았음", Toast.LENGTH_SHORT).show();
+        }
+        finish();
+
     }
 }

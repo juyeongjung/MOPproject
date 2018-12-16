@@ -8,21 +8,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <!--위에 줄을 추가해야 키보드가 자동으로 나타나지 않음-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".add_story"-->
-            <!--android:label="@string/title_activity_add_story"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+
         <activity
             android:name=".foods_pic"
             android:label="@string/title_activity_foods_pic"
@@ -39,7 +39,8 @@
             android:name=".travel"
             android:label="@string/title_activity_travel"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".add_story" />
+        <activity android:name=".add_story"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
 
 </manifest>

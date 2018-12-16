@@ -36,13 +36,14 @@
             android:id="@+id/editTextMedia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextCategory"
-            android:layout_alignLeft="@+id/editTextCategory"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
             android:ems="10"
             android:inputType="numberDecimal"
-            app:layout_constraintStart_toStartOf="@+id/editTextCategory"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
+            app:layout_constraintBottom_toTopOf="@+id/editTextMain"
+            app:layout_constraintStart_toStartOf="@+id/checkBoxCate1"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxCate1" />
 
         <TextView
             android:id="@+id/textView1"
@@ -61,12 +62,14 @@
             android:id="@+id/button1"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:nestedScrollingEnabled="true"
             android:onClick="insert"
             android:text="save"
             app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/editTextMain"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -93,23 +96,24 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="39dp"
             android:text="카테고리"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:layout_constraintBottom_toBottomOf="@+id/editTextCategory"
-            app:layout_constraintEnd_toEndOf="@+id/textView5" />
+            app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
         <EditText
             android:id="@+id/editTextMain"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="91dp"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/editTextMedia"
-            app:layout_constraintTop_toTopOf="@+id/textView4" />
+            app:layout_constraintTop_toTopOf="@+id/textView4"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView3"
@@ -122,18 +126,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/editTextMain"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <EditText
-            android:id="@+id/editTextCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="@+id/editTextDate"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate">
-
-        </EditText>
 
         <EditText
             android:id="@+id/editTextDate"
@@ -167,6 +159,47 @@
             android:text="DELETE"
             app:layout_constraintBaseline_toBaselineOf="@+id/button2"
             app:layout_constraintStart_toEndOf="@+id/button2" />
+
+        <CheckBox
+            android:id="@+id/checkBoxCate1"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="1dp"
+            android:text="special_day"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxCate2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
+
+        <CheckBox
+            android:id="@+id/checkBoxCate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="2dp"
+            android:text="foods"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxCate3"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
+
+        <CheckBox
+            android:id="@+id/checkBoxCate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="40dp"
+            android:text="travel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
+
+        <EditText
+            android:id="@+id/editTextCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:focusableInTouchMode="false"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="@+id/editTextDate"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
