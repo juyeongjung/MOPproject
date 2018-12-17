@@ -128,7 +128,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_special_day) {
+        if(id==R.id.nav_normal_day){
+            Intent intent = new Intent(MainActivity.this, normal_day.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_special_day) {
             Intent intent = new Intent(MainActivity.this, special_day.class);
             startActivity(intent);
         } else if (id == R.id.nav_travel) {

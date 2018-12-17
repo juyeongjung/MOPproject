@@ -7,9 +7,13 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v4.content.ContextCompat;
+import android.widget.ImageView;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -95,7 +99,18 @@ public class DBHelper extends SQLiteOpenHelper {
             array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+
                     res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE))+"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_DATE))
                     +"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_MAIN)));
-            array_list.addAll(ContextCompat.getDrawable());
+//            array_list.addAll(ContextCompat.getDrawable());
+//            File imgFile=new File("%s",STORIES_COLUMN_MEDIA);
+//            if(imgFile.exists()){
+//                System.out.println("detect image!!!");
+//                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+//
+////                ImageView myImage = (ImageView) findViewById(R.id.imageviewTest);
+//
+////                myImage.setImageBitmap(myBitmap);
+//                array_list.add(myBitmap);
+
+//            }
             res.moveToNext();
         }
         return array_list;
@@ -136,6 +151,21 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList array_list = new ArrayList();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from stories where category='travel'", null);
+        res.moveToFirst();
+        while (res.isAfterLast() == false) {
+            array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+
+                    res.getString(res.getColumnIndex(STORIES_COLUMN_TITLE))+"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_DATE))
+                    +"\n"+res.getString(res.getColumnIndex(STORIES_COLUMN_MAIN)));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList getNormalStories(){
+
+        ArrayList array_list = new ArrayList();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from stories where category='normal_day'", null);
         res.moveToFirst();
         while (res.isAfterLast() == false) {
             array_list.add(res.getString(res.getColumnIndex(STORIES_COLUMN_ID))+" "+

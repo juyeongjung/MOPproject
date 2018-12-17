@@ -112,14 +112,11 @@ public class add_story extends AppCompatActivity {
             if (Value > 0) {
                 if(option1.isChecked()){
                     category.setText((CharSequence) "special_day");
-                }
-                else if(option2.isChecked()){
+                } else if(option2.isChecked()){
                     category.setText((CharSequence)"foods");
-                }
-                else if(option3.isChecked()){
+                } else if(option3.isChecked()){
                     category.setText((CharSequence)"travel");
-                }
-                else{
+                } else{
                     category.setText((CharSequence)"normal_day");
                 }
 
@@ -133,14 +130,11 @@ public class add_story extends AppCompatActivity {
             } else {
                 if(option1.isChecked()){
                     category.setText((CharSequence) "special_day");
-                }
-                else if(option2.isChecked()){
+                } else if(option2.isChecked()){
                     category.setText((CharSequence)"foods");
-                }
-                else if(option3.isChecked()){
+                } else if(option3.isChecked()){
                     category.setText((CharSequence)"travel");
-                }
-                else{
+                } else{
                     category.setText((CharSequence)"normal_day");
                 }
 

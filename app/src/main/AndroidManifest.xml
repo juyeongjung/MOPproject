@@ -41,6 +41,9 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".add_story"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".normal_day"
+            android:label="normal_day"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
