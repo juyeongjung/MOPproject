@@ -6,26 +6,19 @@ import android.graphics.Camera;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,10 +26,6 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
-import com.kmu.mopproject.add_story.*;
-
-import static android.graphics.Camera.*;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -151,7 +140,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent=new Intent(MainActivity.this,foods_pic.class);
             startActivity(intent);
         } else if (id == R.id.nav_bucket_list) {
-            Intent intent=new Intent(MainActivity.this,bucket_list.class);
+            Intent intent=new Intent(MainActivity.this,add_video.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
 

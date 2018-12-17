@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".bucket_list"
-    tools:showIn="@layout/activity_bucket_list">
+    tools:context=".add_video"
+    tools:showIn="@layout/activity_add_video">
 
     <SurfaceView
         android:id="@+id/videoview"

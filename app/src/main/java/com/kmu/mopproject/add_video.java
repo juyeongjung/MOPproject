@@ -1,28 +1,21 @@
 package com.kmu.mopproject;
 
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import java.io.IOException;
 import android.app.Activity;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
-import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 import android.widget.Button;
 
-//public class bucket_list extends AppCompatActivity {
+//public class add_video extends AppCompatActivity {
 //
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_bucket_list);
+//        setContentView(R.layout.activity_add_video);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //
@@ -38,7 +31,7 @@ import android.widget.Button;
 //
 //}
 
-public class bucket_list extends Activity implements SurfaceHolder.Callback {
+public class add_video extends Activity implements SurfaceHolder.Callback {
 
     Button myButton;
     MediaRecorder mediaRecorder;
@@ -54,7 +47,7 @@ public class bucket_list extends Activity implements SurfaceHolder.Callback {
         mediaRecorder = new MediaRecorder();
         initMediaRecorder();
 
-        setContentView(R.layout.content_bucket_list);
+        setContentView(R.layout.content_add_video);
 
         SurfaceView myVideoView = (SurfaceView) findViewById(R.id.videoview);
         surfaceHolder = myVideoView.getHolder();

@@ -28,7 +28,7 @@
             android:label="@string/title_activity_foods_pic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".bucket_list"
+            android:name=".add_video"
             android:label="@string/title_activity_bucket_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
