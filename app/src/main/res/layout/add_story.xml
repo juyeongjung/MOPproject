@@ -9,6 +9,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -211,7 +212,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:onClick="onClick"
-            android:text="Button"
+            android:text="첨부하기"
             app:layout_constraintBaseline_toBaselineOf="@+id/editTextMedia"
             app:layout_constraintStart_toEndOf="@+id/editTextMedia" />
 
