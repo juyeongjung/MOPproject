@@ -24,25 +24,28 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton21"
+            android:id="@+id/imageButtonWrite"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/star_on" />
+            app:srcCompat="@drawable/ic_menu_gallery"
+            android:onClick="onClick2"/>
 
         <ImageButton
-            android:id="@+id/imageButton22"
+            android:id="@+id/imageButtonFoods"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/star_on" />
+            app:srcCompat="@drawable/ic_menu_manage"
+            android:onClick="onClick2"/>
 
         <ImageButton
-            android:id="@+id/imageButton23"
+            android:id="@+id/imageButtonVideo"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/star_on" />
+            app:srcCompat="@drawable/ic_menu_camera"
+            android:onClick="onClick2"/>
     </TableRow>
 
     <TableRow
@@ -72,138 +75,7 @@
             android:text="추가" />
     </TableRow>
 
-    <!--<ScrollView-->
 
-    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-
-    <!--android:id="@+id/ScrollView1"-->
-
-    <!--android:layout_width="0dp"-->
-
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toBottomOf="@+id/tableRow2"-->
-    <!--app:layout_constraintVertical_bias="0.0">-->
-
-    <!--<LinearLayout-->
-
-    <!--android:layout_width="match_parent"-->
-
-    <!--android:layout_height="match_parent"-->
-
-    <!--android:orientation="vertical">-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button2"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 1" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button3"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 2" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;&lt;!&ndash; 중간 생략 버튼 4개&ndash;&gt;&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button1"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 6" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 6" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button4"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 6" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button5"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 6" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button6"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 6" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button7"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 6" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button8"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 7" />&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:id="@+id/button9"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-
-    <!--&lt;!&ndash;android:text="Button 9" />&ndash;&gt;-->
-
-
-    <!--</LinearLayout>-->
-
-    <!--</ScrollView>-->
     <ListView
         android:id="@+id/listView1"
         android:layout_width="0dp"

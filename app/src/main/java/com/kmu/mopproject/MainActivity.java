@@ -2,7 +2,11 @@ package com.kmu.mopproject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Camera;
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
@@ -11,12 +15,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +36,8 @@ import java.util.Date;
 
 import com.kmu.mopproject.add_story.*;
 
+import static android.graphics.Camera.*;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ListView myListView;
@@ -36,6 +47,18 @@ public class MainActivity extends AppCompatActivity
     long mNow;
     Date mDate;
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+    private static String EXTERNAL_STORAGE_PATH = "";
+    private static String RECORDED_FILE = "video_recorded";
+    private static int fileIndex = 0;
+    private static String filename = "";
+
+    MediaPlayer player;
+    MediaRecorder recorder;
+
+    private Camera camera = null;
+    SurfaceHolder holder; //SurfaceView를 관리하기 위한 객체 생성
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,22 +74,6 @@ public class MainActivity extends AppCompatActivity
 
         myListView = (ListView) findViewById(R.id.listView1);
         myListView.setAdapter(mAdapter);
-
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long arg4) {
-                String item = (String) ((ListView) parent).getItemAtPosition(position);
-                String[] strArray = item.split(" ");
-                int id = Integer.parseInt(strArray[0]);
-                Bundle dataBundle = new Bundle();
-                dataBundle.putInt("id", id);
-                Intent intent = new Intent(getApplicationContext(), add_story.class);
-                intent.putExtras(dataBundle);
-                startActivity(intent);
-            }
-        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +95,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
 
     @Override
@@ -181,6 +191,14 @@ public class MainActivity extends AppCompatActivity
             HideKeyboard(this);
             onResume();
         }
+    }
+
+    public void onClick2(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", 0);
+        Intent intent = new Intent(getApplicationContext(), add_story.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     public static void HideKeyboard(Activity activity)
